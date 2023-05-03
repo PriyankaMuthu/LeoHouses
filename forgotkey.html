@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            forgot password
+        </title>
+        <link rel="stylesheet" href="C:\Users\SHOBIKA\Documents\Priyanka\Responsive House Rent Website\forgot.css">
+    </head>
+    <body >
+        <img src="C:\Users\SHOBIKA\Documents\Priyanka\Responsive House Rent Website\catcrying2.gif" id="bgcat">
+        <form onsubmit="return changekey()" action="login.html">
+            <div class="box">
+                <h1>Forgot Password</h1>
+                 <span><strong>NewPassword</strong></span><br><br>
+                 <input type="password" id="key" placeholder="atleast 8 characters" class="ipbox" required><br><br>
+                 <span><strong>Password</strong></span><br><br>
+                 <input type="password" id="ckey" placeholder="Enter your new password" class="ipbox" required><br><br>
+                 <button type="submit" id="button">Change Password</button>
+            </div>
+        </form>
+        <script>
+            function changekey()
+            {
+                var Newpassword=document.getElementById("key").value;
+                localStorage.setItem("key",Newpassword);
+                var confirmpassword=document.getElementById("ckey").value;
+                localStorage.setItem("ckey",confirmpassword)
+                if(Newpassword!=confirmpassword)
+                 {
+                    alert("Password does not match");
+                    return false;
+                 }
+                else if(Newpassword.trim()=="" || confirmpassword.trim()=="")
+                {
+                    alert("Empty values are not allowed");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        </script>
+        
+    </body>
+</html>
